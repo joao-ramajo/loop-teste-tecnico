@@ -2,7 +2,7 @@
 
 namespace App\Http;
 
-class AppRequest
+class Request
 {
     private array $query;
     private array $body;
