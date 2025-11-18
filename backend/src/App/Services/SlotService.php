@@ -5,6 +5,8 @@ namespace App\Services;
 use DI\NotFoundException;
 use Domain\Contracts\Repositories\SlotRepositoryInterface;
 use Domain\Contracts\Repositories\VehicleRepositoryInterface;
+use Domain\Exceptions\ModelNotFoundException;
+use Domain\Exceptions\NoAvailableDatesException;
 use Dotenv\Exception\ValidationException;
 
 class SlotService
@@ -19,15 +21,14 @@ class SlotService
      */
     public function getAvailableDates(int $vehicleId): array
     {
-        $vehicleExists = $this->vehicleRepository->exists($vehicleId);
-        if (!$vehicleExists) {
-            throw new NotFoundException('Veículo não encontrado.');
+        if (!$this->vehicleRepository->exists($vehicleId)) {
+            throw new ModelNotFoundException('Veículo não encontrado.');
         }
 
         $dates = $this->slotRepository->findDatesByVehicleId($vehicleId);
 
         if (empty($dates)) {
-            throw new ValidationException('Sem datas disponíveis.');
+            throw new NoAvailableDatesException('Sem datas disponíveis.');
         }
 
         return $dates;

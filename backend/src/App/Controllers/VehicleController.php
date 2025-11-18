@@ -9,6 +9,8 @@ use DI\NotFoundException;
 use Domain\Contracts\Repositories\SlotRepositoryInterface;
 use Domain\Contracts\Repositories\VehicleRepositoryInterface;
 use Domain\Entities\Vehicle;
+use Domain\Exceptions\ModelNotFoundException;
+use Domain\Exceptions\NoAvailableDatesException;
 use Domain\ValueObjects\Id;
 use Domain\ValueObjects\Location;
 use Domain\ValueObjects\Price;
@@ -40,10 +42,10 @@ class VehicleController
                 'message' => 'Datas disponiveis',
                 'data' => $dates,
             ]);
-        } catch (NotFoundException $e) {
+        } catch (ModelNotFoundException $e) {
             return Response::error($e->getMessage(), 404);
-        } catch(ValidationException $e){
-            return Response::error($e->getMessage(), 404);
+        } catch(NoAvailableDatesException $e){
+            return Response::error($e->getMessage(), 422);
         }
     }
 }
