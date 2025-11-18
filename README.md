@@ -41,6 +41,8 @@ A API possui uma coleção do Postman para facilitar os testes dos endpoints dur
 
 Durante o desenvolvimento deste projeto, foram utilizados testes automatizados e análise estática de código para garantir a qualidade da aplicação.
 
+> Para executar estes comandos você deve estar dentro de pasta `/backend`
+
 #### Testes (Pest)
 
 Os testes podem ser executados utilizando os scripts do Composer, que realizam a execução dentro do container Docker.
