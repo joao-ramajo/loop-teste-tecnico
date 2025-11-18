@@ -10,8 +10,8 @@ Repositório destinado a realização do teste técnico para a vaga de Engenheir
 - **PHP 8.3** — Linguagem base da aplicação
 - **Composer** — Gerenciamento de dependências
 - **PHP-DI** — Container de injeção de dependências
-- **FastRoute** — Roteamento rápido e minimalista
-- **Pest** — Testes automatizados com sintaxe moderna
+- **FastRoute** — Lib de Roteamento
+- **Pest** — Testes automatizados
 - **php-dotenv** — Gerenciamento de variáveis de ambiente
 
 #### Infraestrutura
