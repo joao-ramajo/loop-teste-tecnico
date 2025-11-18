@@ -11,7 +11,8 @@ $conn = new PdoConnection(
     $_ENV['DB_PASS']
 );
 
-$sql = file_get_contents(__DIR__ . '/migrations/001_create_vehicles_table.sql');
+// $sql = file_get_contents(__DIR__ . '/migrations/001_create_vehicles_table.sql');
+$sql = file_get_contents(__DIR__ . '/migrations/002_create_slots_table.sql');
 
 $conn->getConnection()->exec($sql);
 
