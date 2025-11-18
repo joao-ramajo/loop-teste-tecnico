@@ -11,4 +11,9 @@ interface VehicleRepositoryInterface
      * @return Vehicle[]
      */
     public function index(): array;
+
+    /**
+     * @return bool
+     */
+    public function exists(int $vehicleId): bool;
 }

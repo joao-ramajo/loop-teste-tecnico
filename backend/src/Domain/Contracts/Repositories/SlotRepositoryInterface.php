@@ -7,12 +7,7 @@ use Domain\Entities\Slot;
 interface SlotRepositoryInterface
 {
     /**
-     * @return Slot[]
+     * @return string[]
      */
     public function findDatesByVehicleId(int $vehicleId): array;
-
-    // /**
-    //  * @return Slot[]
-    //  */
-    // public function findHoursByVehicleAndDate(int $vehicleId, string $date): array;
 }

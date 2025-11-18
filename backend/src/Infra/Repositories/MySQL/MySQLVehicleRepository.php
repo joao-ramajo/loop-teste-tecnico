@@ -24,4 +24,15 @@ class MySQLVehicleRepository implements VehicleRepositoryInterface
 
         return $list;
     }
+
+    public function exists(int $vehicleId): bool
+    {
+        $stmt = $this->pdo->getConnection()->prepare('
+        SELECT 1 FROM vehicles WHERE id = :id LIMIT 1
+        ');
+
+        $stmt->execute(['id' => $vehicleId]);
+
+        return (bool) $stmt->fetchColumn();
+    }
 }
