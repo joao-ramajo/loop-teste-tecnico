@@ -3,9 +3,6 @@
 namespace Infra\Repositories\MySQL;
 
 use Domain\Contracts\Repositories\VehicleRepositoryInterface;
-use Domain\Entities\Vehicle;
-use Domain\ValueObjects\Location;
-use Domain\ValueObjects\Price;
 use Infra\Database\PdoConnection;
 use Infra\Mappers\VehicleMapper;
 
