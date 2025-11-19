@@ -16,7 +16,12 @@
     ],
     "scripts": {
         "stan": "docker exec -it api vendor/bin/phpstan analyse -l 5 src",
-        "test": "docker exec -it api vendor/bin/pest"
+        "test": "docker exec -it api vendor/bin/pest",
+        "migrate": [
+            "docker exec -it api php database/migrate.php",
+            "docker exec -it api php database/seed.php",
+            "docker exec -it api php database/seed_slots.php"
+        ]
     },
     "require": {
         "nikic/fast-route": "^1.3",

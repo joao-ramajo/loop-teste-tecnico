@@ -11,10 +11,31 @@ $conn = new PdoConnection(
     $_ENV['DB_PASS']
 );
 
-// $sql = file_get_contents(__DIR__ . '/migrations/001_create_vehicles_table.sql');
-// $sql = file_get_contents(__DIR__ . '/migrations/002_create_slots_table.sql');
-$sql = file_get_contents(__DIR__ . '/migrations/003_create_appointments_table.sql');
+$pdo = $conn->getConnection();
 
-$conn->getConnection()->exec($sql);
+$migrationsPath = __DIR__ . '/migrations';
 
-echo "Migration executed.\n";
+$migrationFiles = glob($migrationsPath . '/*.sql');
+sort($migrationFiles);
+
+echo "Executando migrations...\n";
+
+foreach ($migrationFiles as $file) {
+    $sql = file_get_contents($file);
+
+    if (!$sql) {
+        echo "⚠️ Arquivo vazio ou ilegível: $file\n";
+        continue;
+    }
+
+    echo "➡️ Executando: " . basename($file) . " ... ";
+
+    try {
+        $pdo->exec($sql);
+        echo "OK\n";
+    } catch (PDOException $e) {
+        echo "Erro: " . $e->getMessage() . "\n";
+    }
+}
+
+echo "Migrations finalizadas!\n";
