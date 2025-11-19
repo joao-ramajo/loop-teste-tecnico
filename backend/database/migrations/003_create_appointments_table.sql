@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS appointments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    slot_id INT NOT NULL,
+
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(180) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (slot_id) REFERENCES slots(id)
+);
