@@ -12,6 +12,9 @@ class MySQLAppointmentRepository implements AppointmentRepositoryInterface
         protected PdoConnection $pdo,
     ) {}
 
+    /**
+     * @return int
+     */
     public function create(StoreAppointmentDto $data): int
     {
         $sql = '

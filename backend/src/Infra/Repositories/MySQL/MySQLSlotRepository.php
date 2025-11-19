@@ -39,9 +39,12 @@ class MySQLSlotRepository implements SlotRepositoryInterface
         );
     }
 
+    /**
+     * @return ?Slot
+     */
     public function findById(SlotId $id): ?Slot
     {
-        $sql = ' 
+        $sql = '
         SELECT *
         FROM slots
         WHERE id = :id
@@ -61,6 +64,9 @@ class MySQLSlotRepository implements SlotRepositoryInterface
         return SlotMapper::fromArray($result);
     }
 
+    /**
+     * @return void
+     */
     public function markAsUnavailable(SlotId $id): void
     {
         $sql = '

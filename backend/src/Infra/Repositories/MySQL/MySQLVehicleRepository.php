@@ -12,6 +12,9 @@ class MySQLVehicleRepository implements VehicleRepositoryInterface
         protected PdoConnection $pdo,
     ) {}
 
+    /**
+     * @return array
+     */
     public function index(): array
     {
         $stmt = $this->pdo->getConnection()->query('SELECT * FROM vehicles');
@@ -25,6 +28,9 @@ class MySQLVehicleRepository implements VehicleRepositoryInterface
         return $list;
     }
 
+    /**
+     * @return bool
+     */
     public function exists(int $vehicleId): bool
     {
         $stmt = $this->pdo->getConnection()->prepare('
