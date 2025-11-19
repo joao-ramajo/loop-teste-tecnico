@@ -43,11 +43,6 @@ echo "Backend pronto!"
 # ===========================
 # FRONTEND INSTALL
 # ===========================
-cd ../frontend
-
-echo "Instalando dependências do frontend..."
-
-npm install
 
 echo "Frontend pronto!"
 

@@ -14,7 +14,7 @@ services:
     build: ./frontend
     container_name: frontend
     volumes:
-      - ./frontend:/app
+      - ./frontend:/app:delegated
       - /app/node_modules
     ports:
       - "5174:5173"
