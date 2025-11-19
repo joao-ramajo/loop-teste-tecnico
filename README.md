@@ -63,3 +63,39 @@ composer stan
 ```
 
 > Ambos os comandos acima são executados dentro do container Docker por meio dos scripts definidos no composer.json, garantindo um ambiente consistente entre máquinas diferentes.
+
+---
+Aqui está a seção completa **“Como executar o projeto”** em Markdown, já formatada para encaixar no seu README perfeitamente:
+
+---
+
+````md
+---
+
+### Como executar o projeto
+
+Para rodar o ambiente completo (backend + MySQL + phpMyAdmin), basta utilizar o Docker Compose.
+
+Na raiz do projeto, execute:
+
+```bash
+docker compose up -d
+````
+
+Isso iniciará:
+
+* API em PHP
+* MySQL
+* phpMyAdmin
+
+A API ficará disponível em:
+
+```bash
+http://localhost:8080
+```
+
+O frontend ficará disponível em:
+
+```bash
+http://localhost:5174
+```
