@@ -8,8 +8,8 @@ use App\Services\SlotService;
 use Domain\Contracts\Repositories\VehicleRepositoryInterface;
 use Domain\Exceptions\ModelNotFoundException;
 use Domain\Exceptions\NoAvailableDatesException;
-use Exception;
 use Monolog\Logger;
+use Exception;
 
 class VehicleController
 {
@@ -21,12 +21,20 @@ class VehicleController
 
     public function index()
     {
-        $vehicles = $this->vehicleRepository->index();
+        try {
+            $vehicles = $this->vehicleRepository->index();
 
-        return Response::json([
-            'message' => 'Listagem realizada com sucesso',
-            'vehicles' => $vehicles,
-        ]);
+            return Response::json([
+                'message' => 'Listagem realizada com sucesso',
+                'vehicles' => $vehicles,
+            ]);
+        } catch (Exception $e) {
+            $this->log->error('Erro ao listar veículos', [
+                'message' => $e->getMessage(),
+                'exception' => $e
+            ]);
+            return Response::error('erro interno do servidor.', 500);
+        }
     }
 
     public function dates(Request $request, int $vehicle_id)
