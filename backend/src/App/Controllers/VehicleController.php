@@ -5,22 +5,18 @@ namespace App\Controllers;
 use App\Http\Request;
 use App\Http\Response;
 use App\Services\SlotService;
-use DI\NotFoundException;
-use Domain\Contracts\Repositories\SlotRepositoryInterface;
 use Domain\Contracts\Repositories\VehicleRepositoryInterface;
-use Domain\Entities\Vehicle;
 use Domain\Exceptions\ModelNotFoundException;
 use Domain\Exceptions\NoAvailableDatesException;
-use Domain\ValueObjects\Id;
-use Domain\ValueObjects\Location;
-use Domain\ValueObjects\Price;
-use Dotenv\Exception\ValidationException;
+use Exception;
+use Monolog\Logger;
 
 class VehicleController
 {
     public function __construct(
         protected readonly VehicleRepositoryInterface $vehicleRepository,
         protected readonly SlotService $slotService,
+        protected readonly Logger $log,
     ) {}
 
     public function index()
@@ -44,8 +40,14 @@ class VehicleController
             ]);
         } catch (ModelNotFoundException $e) {
             return Response::error($e->getMessage(), 404);
-        } catch(NoAvailableDatesException $e){
+        } catch (NoAvailableDatesException $e) {
             return Response::error($e->getMessage(), 422);
+        } catch (Exception $e) {
+            $this->log->error('Erro ao listar datas disponíveis', [
+                'message' => $e->getMessage(),
+                'exception' => $e
+            ]);
+            return Response::error('erro interno do servidor.', 500);
         }
     }
 }
