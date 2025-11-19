@@ -1,11 +1,10 @@
-<?php
+<?php declare(strict_types=1);
 
 use App\Controllers\AppointmentsController;
 use App\Controllers\HealthController;
 use App\Controllers\VehicleController;
 
 /** @var \FastRoute\RouteCollector $router */
-
 $router->addRoute('GET', '/api/v1/health', [HealthController::class, 'check']);
 
 // Vehicles
