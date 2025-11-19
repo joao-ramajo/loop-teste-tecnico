@@ -10,6 +10,7 @@ use Domain\Exceptions\ModelNotFoundException;
 use Domain\Exceptions\NoAvailableDatesException;
 use Monolog\Logger;
 use Exception;
+use Infra\Mappers\VehicleMapper;
 
 class VehicleController
 {
@@ -24,9 +25,13 @@ class VehicleController
         try {
             $vehicles = $this->vehicleRepository->index();
 
+            $data = array_map(
+                fn($vehicle) => VehicleMapper::toArray($vehicle), $vehicles
+            );
+
             return Response::json([
                 'message' => 'Listagem realizada com sucesso',
-                'vehicles' => $vehicles,
+                'data' => $data,
             ]);
         } catch (Exception $e) {
             $this->log->error('Erro ao listar veículos', [

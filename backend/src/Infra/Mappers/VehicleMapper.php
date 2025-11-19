@@ -20,4 +20,17 @@ class VehicleMapper
             location: new Location($data['city'], $data['uf'])
         );
     }
+
+    public static function toArray(Vehicle $vehicle): array
+    {
+        return [
+            'id' => $vehicle->id,
+            'image_url' => $vehicle->imageUrl,
+            'brand' => $vehicle->brand,
+            'model' => $vehicle->model,
+            'version' => $vehicle->version,
+            'price' => $vehicle->price->value(),
+            'location' => $vehicle->location->format(),
+        ];
+    }
 }
