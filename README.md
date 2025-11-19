@@ -72,35 +72,15 @@ composer stan
 
 ### Como executar o projeto
 
-Para rodar o ambiente completo (backend + MySQL + phpMyAdmin), basta utilizar o Docker Compose.
-
-Na raiz do projeto, execute:
+A maneira mais rápida e simples de iniciar todo o ambiente é utilizando o script:
 
 ```bash
-docker compose up -d
-````
-
-Isso iniciará:
-
-* API em PHP
-* MySQL
-* phpMyAdmin
-
-A API ficará disponível em:
-
-```bash
-http://localhost:8080
+./setup.sh
 ```
 
-O frontend ficará disponível em:
-
-```bash
-http://localhost:5174
-```
-
-Após isso para criar as tabelas e executar os seeders, entre na pasta backend/ e execute:
-
-```bash
-composer migrate
-```
-
+Esse comando irá:
+-   Subir todos os containers (API, MySQL, phpMyAdmin e Frontend)
+-   Instalar dependências do backend
+-   Rodar migrações
+-   Executar seeders
+-   Deixar o ambiente totalmente pronto para uso
