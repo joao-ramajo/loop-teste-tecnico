@@ -65,12 +65,6 @@ composer stan
 > Ambos os comandos acima são executados dentro do container Docker por meio dos scripts definidos no composer.json, garantindo um ambiente consistente entre máquinas diferentes.
 
 ---
-Aqui está a seção completa **“Como executar o projeto”** em Markdown, já formatada para encaixar no seu README perfeitamente:
-
----
-
-````md
----
 
 ### Como executar o projeto
 
