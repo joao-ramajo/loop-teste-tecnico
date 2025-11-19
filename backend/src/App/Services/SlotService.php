@@ -9,6 +9,7 @@ use Domain\Contracts\Repositories\VehicleRepositoryInterface;
 use Domain\Exceptions\ModelNotFoundException;
 use Domain\Exceptions\NoAvailableDatesException;
 use Dotenv\Exception\ValidationException;
+use Infra\Mappers\SlotMapper;
 
 class SlotService
 {
@@ -18,7 +19,7 @@ class SlotService
     ) {}
 
     /**
-     * @return string[] Lista de datas disponíveis
+     * @return array Lista de datas disponíveis
      */
     public function getAvailableDates(int $vehicleId): array
     {
@@ -32,6 +33,11 @@ class SlotService
             throw new NoAvailableDatesException('Sem datas disponíveis.');
         }
 
-        return $dates;
+        $slotsArray = array_map(
+            fn($slot) => SlotMapper::toArray($slot),
+            $dates
+        );
+
+        return $slotsArray;
     }
 }
