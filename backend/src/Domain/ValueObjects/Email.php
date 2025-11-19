@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Domain\ValueObjects;
 
@@ -17,7 +17,7 @@ class Email
         $value = mb_strtolower($value, 'UTF-8');
 
         if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
-            throw new \InvalidArgumentException("O e-mail informado é inválido.");
+            throw new \InvalidArgumentException('O e-mail informado é inválido.');
         }
 
         $this->value = $value;

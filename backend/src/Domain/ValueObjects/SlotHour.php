@@ -32,7 +32,6 @@ class SlotHour
             throw new InvalidArgumentException('A hora deve ser entre 00 e 23.');
         }
 
-
         if ($minute < 0 || $minute > 59) {
             throw new InvalidArgumentException('Os minutos devem ser entre 00 e 59.');
         }

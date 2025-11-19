@@ -33,7 +33,7 @@ class Name
 
     private function normalize(string $name): string
     {
-        return mb_convert_case($name, MB_CASE_TITLE, "UTF-8");
+        return mb_convert_case($name, MB_CASE_TITLE, 'UTF-8');
     }
 
     public function __toString(): string

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Domain\ValueObjects;
 
@@ -18,7 +18,7 @@ class Phone
 
         if (!preg_match('/^[1-9]{2}[0-9]{8,9}$/', $digits)) {
             throw new \InvalidArgumentException(
-                "O número de telefone informado é inválido. Use o formato (11) 91234-5678."
+                'O número de telefone informado é inválido. Use o formato (11) 91234-5678.'
             );
         }
 
