@@ -14,7 +14,7 @@ it('mapeia um array em uma entidade Vehicle', function () {
         'model' => 'Gol',
         'version' => '1.0',
         'price' => 123000,
-        'city' => 'Mogi',
+        'location' => 'Mogi',
         'uf' => 'SP',
     ];
 
@@ -37,7 +37,7 @@ it('lança exceção se preço for inválido', function () {
         'model' => 'Gol',
         'version' => '1.0',
         'price' => -1,
-        'city' => 'Mogi',
+        'location' => 'Mogi',
         'uf' => 'SP',
     ];
 

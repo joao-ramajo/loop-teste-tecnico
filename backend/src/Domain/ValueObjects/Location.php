@@ -7,21 +7,21 @@ use InvalidArgumentException;
 class Location
 {
     public function __construct(
-        public readonly string $city,
+        public readonly string $location,
         public readonly string $uf,
     ) {
         if (!preg_match('/^[A-Z]{2}$/', strtoupper($uf))) {
             throw new InvalidArgumentException('Invalid UF');
         }
 
-        if (trim($city) === '') {
-            throw new InvalidArgumentException('City cant be null');
+        if (trim($location) === '') {
+            throw new InvalidArgumentException('location cant be null');
         }
     }
 
     public function format(): string
     {
-        return "$this->city - $this->uf";
+        return "$this->location - $this->uf";
     }
 
     public function __toString(): string

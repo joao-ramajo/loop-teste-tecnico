@@ -14,7 +14,7 @@ $conn = new PdoConnection(
 $pdo = $conn->getConnection();
 
 $sql = "
-INSERT INTO vehicles (image_url, brand, model, version, price, city, uf) VALUES
+INSERT INTO vehicles (image_url, brand, model, version, price, location, uf) VALUES
 -- Carros
 ('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Volkswagen_Gol_Highline_2023_%2853708009248%29_%28cropped%29.jpg/1200px-Volkswagen_Gol_Highline_2023_%2853708009248%29_%28cropped%29.jpg', 'Volkswagen', 'Gol', '1.0 MSI', 55000, 'Carapicuíba', 'SP'),
 ('https://upload.wikimedia.org/wikipedia/commons/2/27/Fiat_Argo_2017b_%28cropped%29.jpg', 'Fiat', 'Argo', '1.3 Trekking', 72000, 'Osasco', 'SP'),

@@ -17,7 +17,7 @@ class VehicleMapper
             model: $data['model'],
             version: $data['version'],
             price: new Price((int) $data['price']),
-            location: new Location($data['city'], $data['uf'])
+            location: new Location($data['location'], $data['uf'])
         );
     }
 

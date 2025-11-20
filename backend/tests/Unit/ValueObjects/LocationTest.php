@@ -6,7 +6,7 @@ it('cria um Location válido com sucesso', function () {
     $location = new Location('Mogi das Cruzes', 'SP');
 
     expect($location)->toBeInstanceOf(Location::class);
-    expect($location->city)->toBe('Mogi das Cruzes');
+    expect($location->location)->toBe('Mogi das Cruzes');
     expect($location->uf)->toBe('SP');
     expect($location->format())->toBe('Mogi das Cruzes - SP');
 });

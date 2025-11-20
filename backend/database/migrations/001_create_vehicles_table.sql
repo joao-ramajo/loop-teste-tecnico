@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS vehicles (
     model VARCHAR(100) NOT NULL,
     version VARCHAR(100) NOT NULL,
     price INT NOT NULL,
-    city VARCHAR(100) NOT NULL,
+    location VARCHAR(100) NOT NULL,
     uf CHAR(2) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
