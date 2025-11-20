@@ -43,7 +43,7 @@ if (file_exists($envPath)) {
 
 $builder = new ContainerBuilder();
 
-$definitions = require dirname(__DIR__) . '/src/Infra/Container/definitions.php';
+$definitions = require dirname(__DIR__) . '/config/container.php';
 $definitions($builder);
 
 $container = $builder->build();

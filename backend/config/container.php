@@ -15,7 +15,7 @@ return function (ContainerBuilder $builder) {
     $builder->addDefinitions([
         Logger::class => function () {
             $logger = new Logger('app');
-            $logger->pushHandler(new StreamHandler(dirname(__DIR__, 3) . '/storage/app.log'));
+            $logger->pushHandler(new StreamHandler(dirname(__DIR__, 1) . '/storage/app.log'));
             return $logger;
         },
         PdoConnection::class => function () {
