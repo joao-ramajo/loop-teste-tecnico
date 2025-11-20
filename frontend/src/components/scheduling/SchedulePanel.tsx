@@ -87,7 +87,6 @@ export default function SchedulePanel({ vehicleId, onSelect }: SchedulePanelProp
                                     key={date}
                                     onClick={() => {
                                         setSelectedDate(date);
-                                        console.log(date);
                                         setSelectedHour(null);
                                         setSelectedSlotId(null);
                                     }}
@@ -125,7 +124,6 @@ export default function SchedulePanel({ vehicleId, onSelect }: SchedulePanelProp
                                     onClick={() => {
                                         if (!isAvailable) return;
                                         setSelectedHour(hour);
-                                        console.log(hour);
                                         setSelectedSlotId(slot?.id ?? null);
                                     }}
                                     sx={{
