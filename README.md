@@ -52,7 +52,17 @@ O sistema permite que usuários:
 
 A API possui uma coleção do Postman para facilitar os testes durante o desenvolvimento.
 
+O arquivo está no formato JSON e pode ser importado diretamente no Postman.
+
 **[🔗 Acessar Coleção Postman](./docs/postman-collection.json)**
+
+### Como testar usando o Postman
+
+- Abra o Postman
+- Clique em Import
+- Selecione o arquivo postman-collection.json
+- A coleção será carregada automaticamente
+- As rotas já estão configuradas com a variável {{url}} apontando para o ambiente de produção:
 
 ---
 
