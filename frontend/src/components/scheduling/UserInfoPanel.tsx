@@ -8,24 +8,23 @@ interface MaskedInputProps {
     name: string;
 }
 // Componente wrapper para o MUI
-const PhoneMask = forwardRef<HTMLElement, MaskedInputProps>(function PhoneMask(
-    props,
-    ref
-) {
-    const { onChange, ...other } = props;
+export const PhoneMask = forwardRef<HTMLInputElement, MaskedInputProps>(
+    function PhoneMask(props, ref) {
+        const { onChange, ...other } = props;
 
-    return (
-        <IMaskInput
-            {...other}
-            mask="(00) 00000-0000"
-            inputRef={ref}
-            onAccept={(value: any) =>
-                onChange({ target: { name: props.name, value } })
-            }
-            overwrite
-        />
-    );
-});
+        return (
+            <IMaskInput
+                {...other}
+                mask="(00) 00000-0000"
+                inputRef={ref as any}
+                onAccept={(value: any) =>
+                    onChange({ target: { name: props.name, value } })
+                }
+                overwrite
+            />
+        );
+    }
+);
 
 
 interface UserInfoPanelProps {
