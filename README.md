@@ -120,3 +120,19 @@ Domínio completamente desacoplado dos detalhes de infraestrutura.
 
 ---
 
+## Diagrama de Arquitetura e Fluxo
+
+Antes de iniciar o desenvolvimento, foi criado um diagrama no Excalidraw para organizar as entidades, relacionamentos, fluxo de informações e as principais decisões arquiteturais do sistema.
+
+Isso ajudou a estruturar:
+
+- entidades do domínio (Vehicle, Slot, Appointment, Location)
+- fluxo do usuário no front-end
+- dependências entre serviços
+- endpoints da API
+- responsabilidades de cada camada
+- regras de negócio relacionadas a datas e horários
+
+**Diagrama (Excalidraw):**  
+![architecture-diagram](./docs/diagrama.png)
+
