@@ -7,7 +7,7 @@ use FastRoute\RouteCollector;
 
 // Rotas
 $dispatcher = FastRoute\simpleDispatcher(function(RouteCollector $router) {
-    require dirname(__DIR__, 1) . '/src/Routes/api.php';
+    require dirname(__DIR__, 1) . '/config/api.php';
 });
 
 $method = $_SERVER['REQUEST_METHOD'];
