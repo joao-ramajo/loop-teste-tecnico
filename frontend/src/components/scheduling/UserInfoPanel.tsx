@@ -38,11 +38,11 @@ interface UserInfoPanelProps {
 }
 
 export default function UserInfoPanel({
-    slotId,
-    date,
-    hour,
+    // slotId,
+    // date,
+    // hour,
     error,
-    onBack,
+    // onBack,
     onConfirm,
 }: UserInfoPanelProps) {
     const [form, setForm] = useState({
