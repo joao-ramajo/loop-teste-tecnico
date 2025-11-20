@@ -10,6 +10,9 @@ $conn = new PdoConnection(
     $_ENV['DB_USERNAME'] ?? getenv('DB_USERNAME'),
     $_ENV['DB_PASSWORD'] ?? getenv('DB_PASSWORD')
 );
+
+$pdo = $conn->getConnection();
+
 $sql = "
 INSERT INTO vehicles (image_url, brand, model, version, price, city, uf) VALUES
 -- Carros
@@ -23,6 +26,6 @@ INSERT INTO vehicles (image_url, brand, model, version, price, city, uf) VALUES
 ('https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202505/20250530/yamaha-nmax-160-abs-WMIMAGEM1416499887.jpg', 'Yamaha', 'NMax 160', 'ABS', 17500, 'Barueri', 'SP');
 ";
 
-$pdo->getConnection()->exec($sql);
+$pdo->exec($sql);
 
 echo "Seed finished.\n";

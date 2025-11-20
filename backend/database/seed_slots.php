@@ -11,6 +11,8 @@ $conn = new PdoConnection(
     $_ENV['DB_PASSWORD'] ?? getenv('DB_PASSWORD')
 );
 
+$pdo = $conn->getConnection();
+
 $sql = "
 INSERT INTO slots (vehicle_id, date, hour, available) VALUES
 
@@ -66,7 +68,6 @@ INSERT INTO slots (vehicle_id, date, hour, available) VALUES
 (3, '2025-04-03', '18:00', 1);
 ";
 
-
-$pdo->getConnection()->exec($sql);
+$pdo->exec($sql);
 
 echo "Seed finished.\n";
