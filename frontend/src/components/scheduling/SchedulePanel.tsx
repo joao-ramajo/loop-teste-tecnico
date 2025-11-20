@@ -47,10 +47,11 @@ export default function SchedulePanel({ vehicleId, onSelect }: SchedulePanelProp
     const GREEN = "#4caf50";
     const RED = "#ff123c";
 
-    const monthName = new Date(Object.keys(groupedDates)[0]).toLocaleDateString(
-        "pt-BR",
-        { month: "long", year: "numeric" }
-    );
+    const monthName = new Date(`${Object.keys(groupedDates)[0]}T00:00:00`)
+        .toLocaleDateString("pt-BR", {
+            month: "long",
+            year: "numeric",
+        });
 
     return (
         <>
