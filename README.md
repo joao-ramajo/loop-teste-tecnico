@@ -154,3 +154,17 @@ Isso ajudou a estruturar:
 ![architecture-diagram](./docs/diagrama.png)
 
 > Durante o desenvolvimento algumas escolhas foram repensadas, este diagrama representa o planejamento inicial do projeto.
+
+
+## CORS – Política de Origem Liberada
+
+Por questões de segurança, o backend implementado neste projeto não aceita requisições de qualquer origem.
+
+Atualmente, o CORS está configurado para permitir apenas duas origens:
+
+- http://localhost
+
+Usado no ambiente de desenvolvimento com Vite.
+
+E o domínio do frontend hospedado na Vercel
+Definido via variável de ambiente FRONTEND_URL.
