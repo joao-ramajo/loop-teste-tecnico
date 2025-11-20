@@ -1,12 +1,14 @@
 services:
   api:
-    build: ./backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.dev
     container_name: api
     ports:
       - "8080:8080"
-    # volumes:
-    #   - ./backend:/app
-    volumes: []
+    volumes:
+      - ./backend:/app
+      - /app/vendor
 
     depends_on:
       - db
@@ -18,11 +20,12 @@ services:
     restart: unless-stopped
 
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
     container_name: frontend
     volumes:
-      - ./frontend:/app:delegated
-      # - /app/node_modules
+      - ./frontend:/app
     ports:
       - "5174:5173"
 
