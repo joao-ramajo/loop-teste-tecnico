@@ -9,6 +9,11 @@ services:
 
     depends_on:
       - db
+    command: >
+      sh -c "
+        composer install
+        php -S 0.0.0.0:8080 -t public
+      "
 
   frontend:
     build: ./frontend

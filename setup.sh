@@ -49,6 +49,8 @@ until docker exec db mysqladmin ping -h "localhost" --silent; do
   sleep 5
 done
 
+docker exec api composer install
+
 run_migrate
 
 echo ""
