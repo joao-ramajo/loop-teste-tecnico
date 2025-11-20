@@ -153,3 +153,4 @@ Isso ajudou a estruturar:
 **Diagrama (Excalidraw):**  
 ![architecture-diagram](./docs/diagrama.png)
 
+> Durante o desenvolvimento algumas escolhas foram repensadas, este diagrama representa o planejamento inicial do projeto.
