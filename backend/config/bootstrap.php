@@ -16,8 +16,12 @@ header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
 
 date_default_timezone_set('America/Sao_Paulo');
 
-$dotenv = Dotenv::createImmutable(dirname(__DIR__, 1));
-$dotenv->load();
+$envPath = dirname(__DIR__, 1) . '/.env';
+
+if (file_exists($envPath)) {
+    $dotenv = Dotenv::createImmutable(dirname(__DIR__, 1));
+    $dotenv->load();
+}
 
 $builder = new ContainerBuilder();
 

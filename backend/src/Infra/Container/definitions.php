@@ -20,10 +20,10 @@ return function (ContainerBuilder $builder) {
         },
         PdoConnection::class => function () {
             return new PdoConnection(
-                host: $_ENV['DB_HOST'],
-                database: $_ENV['DB_NAME'],
-                username: $_ENV['DB_USER'],
-                password: $_ENV['DB_PASS']
+                host: $_ENV['DB_HOST'] ?? getenv('DB_HOST'),
+                database: $_ENV['DB_DATABASE'] ?? getenv('DB_DATABASE'),
+                username: $_ENV['DB_USERNAME'] ?? getenv('DB_USERNAME'),
+                password: $_ENV['DB_PASSWORD'] ?? getenv('DB_PASSWORD')
             );
         },
         VehicleRepositoryInterface::class => \DI\autowire(MySQLVehicleRepository::class),

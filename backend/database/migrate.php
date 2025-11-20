@@ -5,10 +5,10 @@ require dirname(__DIR__, 1) . '/config/bootstrap.php';
 use Infra\Database\PdoConnection;
 
 $conn = new PdoConnection(
-    $_ENV['DB_HOST'],
-    $_ENV['DB_NAME'],
-    $_ENV['DB_USER'],
-    $_ENV['DB_PASS']
+    $_ENV['DB_HOST'] ?? getenv('DB_HOST'),
+    $_ENV['DB_DATABASE'] ?? getenv('DB_DATABASE'),
+    $_ENV['DB_USERNAME'] ?? getenv('DB_USERNAME'),
+    $_ENV['DB_PASSWORD'] ?? getenv('DB_PASSWORD')
 );
 
 $pdo = $conn->getConnection();
