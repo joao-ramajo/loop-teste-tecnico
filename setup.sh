@@ -7,19 +7,22 @@ echo "Iniciando instalação do projeto Loop..."
 # ===========================
 if [ ! -f backend/.env ]; then
   echo "Criando backend/.env..."
-  cp backend/.env.example backend/.env
+  cp -f backend/.env.example backend/.env
 else
   echo "backend/.env já existe, pulando..."
 fi
 
 if [ -f frontend/.env.example ] && [ ! -f frontend/.env ]; then
   echo "Criando frontend/.env..."
-  cp frontend/.env.example frontend/.env
+  cp -f frontend/.env.example frontend/.env
 else
   echo "frontend/.env já existe ou não possui .env.example"
 fi
 
 echo "Subindo containers..."
+
+docker compose down
+
 docker compose up -d
 
 echo "Aguardando containers iniciarem..."
