@@ -6,7 +6,6 @@ import { useLocation } from "react-router-dom";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 
-
 export default function SuccessPage() {
     const navigate = useNavigate();
     const { state } = useLocation();

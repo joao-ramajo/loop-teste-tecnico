@@ -7,7 +7,7 @@ interface MaskedInputProps {
     onChange: (event: { target: { name: string; value: string } }) => void;
     name: string;
 }
-// Componente wrapper para o MUI
+
 export const PhoneMask = forwardRef<HTMLInputElement, MaskedInputProps>(
     function PhoneMask(props, ref) {
         const { onChange, ...other } = props;
@@ -25,7 +25,6 @@ export const PhoneMask = forwardRef<HTMLInputElement, MaskedInputProps>(
         );
     }
 );
-
 
 interface UserInfoPanelProps {
     slotId: number;
@@ -58,9 +57,6 @@ export default function UserInfoPanel({
 
     const RED = "#ff123c";
 
-    // -------------------------------
-    // Validadores individuais
-    // -------------------------------
     const validators = {
         name: (value: string) =>
             value.trim().length < 3 ? "Digite seu nome completo." : "",
@@ -76,11 +72,9 @@ export default function UserInfoPanel({
                 : "Telefone inválido. Use 11 dígitos.",
     };
 
-    // Executa validação ao atualizar cada campo
     const handleChange = (field: "name" | "email" | "phone", value: string) => {
         setForm((prev) => ({ ...prev, [field]: value }));
 
-        // Validação em tempo real
         setErrors((prev) => ({
             ...prev,
             [field]: validators[field](value),
@@ -89,9 +83,6 @@ export default function UserInfoPanel({
 
     function formatAppointment(date: string, hour: string) {
         const [year, month, day] = date.split("-").map(Number);
-
-        // console.log("DATE: " + date);
-        // console.log("HOUR:" + hour);
 
         const d = new Date(year, month - 1, day); // <-- Sempre no fuso local
 
@@ -186,7 +177,6 @@ export default function UserInfoPanel({
                     />
                 </Box>
 
-                {/* Error global vindo da API */}
                 {error && (
                     <Typography
                         variant="body2"

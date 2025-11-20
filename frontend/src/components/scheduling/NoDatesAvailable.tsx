@@ -18,7 +18,7 @@ export default function NoDatesAvailable() {
         mx: "auto",
 
         display: "flex",
-        flexDirection: "column", // 👈 transforma o card em coluna
+        flexDirection: "column",
       }}
     >
       {/* HEADER */}
@@ -38,13 +38,13 @@ export default function NoDatesAvailable() {
       {/* BODY */}
       <Box
         sx={{
-          flexGrow: 1, // 👈 ocupa o espaço restante
+          flexGrow: 1,
           p: 4,
           textAlign: "center",
 
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center", // 👈 centraliza conteúdo
+          justifyContent: "center",
           alignItems: "center",
         }}
       >

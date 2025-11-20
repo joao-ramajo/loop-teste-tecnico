@@ -53,17 +53,14 @@ export default function SchedulePanel({ vehicleId, onSelect }: SchedulePanelProp
     return acc;
   }, {});
 
-  // Ordenar meses
   const sortedMonths = Object.keys(groupedByMonth).sort();
 
-  // Gerar todas as horas possíveis
   const allHours: string[] = [];
   for (let h = 9; h <= 18; h++) {
     allHours.push(`${String(h).padStart(2, "0")}:00`);
     if (h < 18) allHours.push(`${String(h).padStart(2, "0")}:30`);
   }
 
-  // Obter slots disponíveis para a data selecionada
   const availableSlotsForDate: Slot[] =
     selectedDate && selectedMonth
       ? groupedByMonth[selectedMonth]?.[selectedDate] ?? []

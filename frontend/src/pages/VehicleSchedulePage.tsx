@@ -5,6 +5,7 @@ import { useState } from "react";
 import { VehicleCard } from "../components/vehicle/VehicleCard";
 import SchedulePanel from "../components/scheduling/SchedulePanel";
 import UserInfoPanel from "../components/scheduling/UserInfoPanel";
+import VehicleNotFound from "./VehicleNotFoundPage";
 
 import Layout from "../components/layout/Layout";
 import { useNavigate } from "react-router-dom";
@@ -28,7 +29,7 @@ export default function VehicleSchedulePage() {
     } | null>(null);
 
     if (!vehicle) {
-        return <Typography sx={{ p: 4 }}>Veículo não encontrado.</Typography>;
+        return <VehicleNotFound />;
     }
 
     return (

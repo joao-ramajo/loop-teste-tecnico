@@ -13,8 +13,6 @@ interface VehicleCardProps {
     vehicle: Vehicle;
 }
 
-
-
 export function VehicleCard({ vehicle }: VehicleCardProps) {
     const { id, image_url, brand, model, version, price, location } = vehicle;
     return (
