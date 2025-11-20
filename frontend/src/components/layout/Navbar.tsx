@@ -7,8 +7,11 @@ import { Link } from "react-router-dom";
 import LoopLogo from "../../assets/loop-logo.svg";
 
 import { Container } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
+    const navigate = useNavigate();
+
     return (
         <AppBar
             position="static"
@@ -28,10 +31,14 @@ export default function Navbar() {
                         py: 2,
                     }}
                 >
-                    <Box sx={{ display: "flex", alignItems: "center" }}>
-                        <img src={LoopLogo} alt="Loop Logo" style={{ height: 40 }} />
+                    <Box sx={{ display: "flex", alignItems: "center", cursor: "pointer" }}>
+                        <img
+                            src={LoopLogo}
+                            alt="Loop Logo"
+                            style={{ height: 40 }}
+                            onClick={() => navigate('/')}
+                        />
                     </Box>
-
                     <Box sx={{ display: "flex", gap: 4 }}>
                         <Typography
                             component={Link}
