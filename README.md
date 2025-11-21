@@ -19,6 +19,7 @@ Sistema de agendamento de visitas para veículos, desenvolvido como teste técni
 - [CORS – Política de Origem Liberada](#cors--política-de-origem-liberada)
 - [Especificação OpenAPI](#especificação-openapi)
 - [Vídeo de Execução do Projeto](#execução-do-projeto-via-script)
+- [Screenshots](#screenshots-do-sistema)
 
 ## Sobre o Projeto
 
@@ -217,7 +218,9 @@ Nele é possível ver o funcionamento completo do script de setup, que realiza a
 
 [Veja aqui](https://youtu.be/OPgffkzMqbk)
 
-### Screenshots
+### Screenshots do Sistema
+
+A seguir estão algumas capturas de tela que demonstram o funcionamento completo da aplicação.
 
 | ![](./docs/images/image-1.png) | ![](./docs/images/image-2.png) | ![](./docs/images/image-3.png) |
 |---|---|---|
