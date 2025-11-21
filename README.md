@@ -226,4 +226,4 @@ A seguir estão algumas capturas de tela que demonstram o funcionamento completo
 |---|---|---|
 | ![](./docs/images/image-4.png) | ![](./docs/images/image-5.png) | ![](./docs/images/image-6.png) |
 |---|---|---|
-| ![](./docs/images/image-7.png) |
+| ![](./docs/images/image-7.png) | ![](./docs/images/image-8.png) |
