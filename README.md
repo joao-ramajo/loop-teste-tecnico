@@ -216,3 +216,11 @@ Nele é possível ver o funcionamento completo do script de setup, que realiza a
 - Inicialização do servidor
 
 [Veja aqui](https://youtu.be/OPgffkzMqbk)
+
+### Screenshots
+
+| ![](./docs/images/image-1.png) | ![](./docs/images/image-2.png) | ![](./docs/images/image-3.png) |
+|---|---|---|
+| ![](./docs/images/image-4.png) | ![](./docs/images/image-5.png) | ![](./docs/images/image-6.png) |
+|---|---|---|
+| ![](./docs/images/image-7.png) |
